@@ -1,0 +1,5 @@
+key = "Dev/statefile-app/app.tfstate"
+bucket= "terraformz-2025"
+region= "ap-south-1"
+key_infra = "Dev/statefile-infra/infra.tfstate"
+key_platform = "Dev/statefile-platform/platform.tfstate"

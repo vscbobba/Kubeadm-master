@@ -1,0 +1,32 @@
+resource "aws_instance" "appserver-1" {
+    subnet_id = data.terraform_remote_state.infrastructure.outputs.aws_pub_1
+    ami           = "ami-0614680123427b75e"
+    instance_type = "t2.medium"
+    security_groups = ["${data.terraform_remote_state.platform.outputs.aws_jum_sg}"]
+    key_name = "bobbascloud"
+    tags = {
+        name = "jenkins-bobbascloud"
+    }
+    provisioner "remote-exec" {
+      inline = [
+    // Update package repositories and install Jenkins
+    "sudo dnf update -y",
+    "sudo dnf install -y wget",
+    "sudo dnf install git -y",
+    "sudo dnf install java-17-amazon-corretto -y",
+    "sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo",
+    "sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key",
+    "sudo dnf install jenkins -y",
+    "sudo systemctl start jenkins",
+    "sudo systemctl enable jenkins",
+    "sudo dnf update -y",
+    "sudo dnf install maven -y"
+    ]
+    connection {
+      type        = "ssh"
+      host        = self.public_ip
+      user        = "ec2-user" // Change user based on your AMI
+      private_key = file("C:\\Users\\vbobba\\Downloads\\bobbascloud.pem") // Replace with your private key file path
+     }
+    }
+}
