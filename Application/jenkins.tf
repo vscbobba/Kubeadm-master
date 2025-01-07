@@ -1,4 +1,4 @@
-resource "aws_instance" "appserver-1" {
+resource "aws_instance" "Jenkins" {
     subnet_id = data.terraform_remote_state.infrastructure.outputs.aws_pub_1
     ami           = "ami-0614680123427b75e"
     instance_type = "t2.medium"
