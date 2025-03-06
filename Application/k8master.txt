@@ -8,3 +8,4 @@ kubectl get --raw='/readyz?verbose'
 kubectl cluster-info
 kubectl apply -f https://raw.githubusercontent.com/projectcalico/calico/v3.25.0/manifests/calico.yaml
 kubectl get po -n kube-system
+kubectl create namespace jenkins
