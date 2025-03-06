@@ -34,6 +34,8 @@ resource "aws_instance" "kubeadm-master" {
       "sudo systemctl restart containerd.service",
       "sudo systemctl restart kubelet.service",
       "sudo systemctl enable kubelet.service",
+      "sudo hostnamectl set-hostname K8s-Master",
+      "sudo systemctl restart systemd-hostnamed",
       "sudo git clone https://github.com/vscbobba/Kubeadm-master.git"
     ]
 
