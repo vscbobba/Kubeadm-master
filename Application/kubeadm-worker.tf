@@ -34,6 +34,8 @@ resource "aws_instance" "kubeadm-worker" {
       "sudo systemctl restart containerd.service",
       "sudo systemctl restart kubelet.service",
       "sudo systemctl enable kubelet.service",
+      "sudo hostnamectl set-hostname K8s-Worker",
+      "sudo systemctl restart systemd-hostnamed",
       "sudo mkdir -p /mnt/data/jenkins",
       "sudo chown -R 1000:1000 /mnt/data/jenkins",
       "sudo chmod -R 775 /mnt/data/jenkins"
