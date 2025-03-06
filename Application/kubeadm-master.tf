@@ -33,7 +33,8 @@ resource "aws_instance" "kubeadm-master" {
       "sudo sed -i 's/ SystemdCgroup = false/ SystemdCgroup = true/' /etc/containerd/config.toml",
       "sudo systemctl restart containerd.service",
       "sudo systemctl restart kubelet.service",
-      "sudo systemctl enable kubelet.service"
+      "sudo systemctl enable kubelet.service",
+      "sudo git clone https://github.com/vscbobba/Kubeadm-master.git"
     ]
 
     connection {
