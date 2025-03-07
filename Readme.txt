@@ -16,6 +16,7 @@ cd ../Application
 terraform init -backend-config=dev-app.config
 terraform apply -var-file=dev-app.tfvars -auto-approve
 
+Now you will get 2 Ec2 servers: K8-Master, K8-Worker
 
 Login to K8-Master: run commands in k8master.txt file, copy join/token cmd 
 login to K8-worker: run the join/token cmd
