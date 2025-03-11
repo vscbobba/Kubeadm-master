@@ -39,8 +39,8 @@ resource "aws_instance" "kubeadm-worker" {
       "sudo mkdir -p /mnt/data/jenkins",
       "sudo chown -R 1000:1000 /mnt/data/jenkins",
       "sudo chmod -R 775 /mnt/data/jenkins",
-      "sudo mkdir -p /mnt/data/sonarqube/{data,logs,extensions} && \",
-      "sudo chown -R 1000:1000 /mnt/data/sonarqube && \",
+      "sudo mkdir -p /mnt/data/sonarqube/{data,logs,extensions}",
+      "sudo chown -R 1000:1000 /mnt/data/sonarqube",
       "sudo chmod -R 775 /mnt/data/sonarqube"
     ]
 
