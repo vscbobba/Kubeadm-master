@@ -24,7 +24,8 @@ login to K8-worker: run the join/token cmd
 again from K8-Master: got to git repo clong directory and run 
                            kubectl apply -f '*.yaml'
 
-http://<public Ip of Worker or Master>:30000
+http://<public Ip of Worker or Master>:30000         -----> for jenkins
+http://<public Ip of Worker or Master>:30001         -----> for sonarqube
 
 
 Cleanup:
