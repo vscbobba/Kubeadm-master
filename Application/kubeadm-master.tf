@@ -36,6 +36,11 @@ resource "aws_instance" "kubeadm-master" {
       "sudo systemctl enable kubelet.service",
       "sudo hostnamectl set-hostname K8s-Master",
       "sudo systemctl restart systemd-hostnamed",
+      "curl -O https://get.helm.sh/helm-v3.16.2-linux-amd64.tar.gz",
+      "sudo tar xvf helm-v3.16.2-linux-amd64.tar.gz",
+      "sudo mv linux-amd64/helm /usr/local/bin",
+      "sudo rm helm-v3.16.2-linux-amd64.tar.gz",
+      "sudo rm -rf linux-amd64",
       "sudo git clone https://github.com/vscbobba/Kubeadm-master.git"
     ]
 
