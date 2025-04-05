@@ -5,7 +5,7 @@ resource "aws_instance" "Jenkins" {
     security_groups = ["${data.terraform_remote_state.platform.outputs.aws_jum_sg}"]
     key_name = "bobbascloud"
     tags = {
-        name = "jenkins-bobbascloud"
+        Name = "jenkins-bobbascloud"
     }
     provisioner "remote-exec" {
       inline = [
