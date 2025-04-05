@@ -6,7 +6,7 @@ resource "aws_instance" "kubeadm-master" {
   key_name           = "bobbascloud"
   
   tags = {
-    name = "k8master"
+    Name = "k8master"
   }
 
   # Provisioner to run remote commands
