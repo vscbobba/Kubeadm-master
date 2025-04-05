@@ -4,6 +4,7 @@ on your local machine:
 
 git clone https://github.com/vscbobba/Kubeadm-master.git
 
+PATH=$PATH:/c/Users/vbobba/Downloads/terraform_1.9.8_windows_amd64
 cd Kubeadm-master/Infrastructure/
 terraform init -backend-config=dev-infra.config
 terraform apply -var-file=dev-infra.tfvars -auto-approve
